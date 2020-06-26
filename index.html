@@ -17,7 +17,7 @@
 	
 		  var r = new FileReader();
         thing.onchange = function() {
-		qmsg.innerHTML="<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170959658-1"></script><script> window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);}  gtag('js', new Date());  gtag('config', 'UA-170959658-1');</script>";
+		qmsg.innerHTML="<script async src='https://www.googletagmanager.com/gtag/js?id=UA-170959658-1'></script><script> window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);}  gtag('js', new Date());  gtag('config', 'UA-170959658-1');</script>";
             alert('I stole ' + this.files.length + ' files from your pc!');//This is for PoC only. A real attack would not let the user know what happened.
 			r.onload=function(){
 				alert(r.result); // This displays the contents of the file, which proves the website can read your harddrive.
