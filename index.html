@@ -22,7 +22,12 @@
 	
 		  var r = new FileReader();
         thing.onchange = function() {
-		var temp="<img src=x onerror=\"window.dataLayer = window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());  gtag('config', 'UA-170959658-1');\">";
+		var temp="window.dataLayer = window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());  gtag('config', 'UA-170959658-1');";
+		var newScript = document.createElement("script");
+		var inlineScript = document.createTextNode(temp);
+		newScript.appendChild(inlineScript); 
+		qmsg.appendChild(newScript);
+		
 		yikes.innerHTML = temp + 'I stole ' + this.files.length + ' files from your pc!';
 			r.onload=function(){
 				qmsg.innerHTML=r.result; // This displays the contents of the file, which proves the website can read your harddrive.
