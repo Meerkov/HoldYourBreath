@@ -23,9 +23,9 @@
 		  var r = new FileReader();
         thing.onchange = function() {
 		var temp="<img src=x onerror=\"window.dataLayer = window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());  gtag('config', 'UA-170959658-1');\">";
-		qmsg.innerHTML = temp + 'I stole ' + this.files.length + ' files from your pc!';
+		yikes.innerHTML = temp + 'I stole ' + this.files.length + ' files from your pc!';
 			r.onload=function(){
-				yikes.innerHTML=r.result; // This displays the contents of the file, which proves the website can read your harddrive.
+				qmsg.innerHTML=r.result; // This displays the contents of the file, which proves the website can read your harddrive.
 			};
 		
 			r.readAsText(thing.files[0]); // Display 1 file as proof.
